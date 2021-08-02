@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Button } from 'react-native';
 
-class AskMatching extends Component {
-  render () {
-    return (
+class AskMatchingClient extends Component {
+  render (route) {
+      const {data} = this.props.route;
+      const category = data ? data.category : '한식';
+      const store = data ? data.store : '한그릇';
+
+      return (
         <View style={{
             flex: 1,
             alignItems: 'center', // 가로 정렬
@@ -12,6 +16,11 @@ class AskMatching extends Component {
         }}>
             <Text>매칭 요청중</Text>
             <Text>| 주문 내역 창 |</Text>
+
+            {/* <Text>{data}</Text> */}
+            <Text>{JSON.stringify(category)}</Text>
+            <Text>{JSON.stringify(store)}</Text>
+
             <Text>내가 주문할 음식은 [Picker]</Text>
             <Button
                 style={styles.buttonStyle}
@@ -41,4 +50,4 @@ const styles = StyleSheet.create({
       }
 });
 
-export default AskMatching;
+export default AskMatchingClient;

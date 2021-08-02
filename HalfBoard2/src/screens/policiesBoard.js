@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text, Button, Linking } from 'react-native';
 
 class PoliciesBoard extends Component {
   render () {
@@ -37,7 +37,7 @@ class PoliciesBoard extends Component {
                 style={styles.buttonStyle}
                 title="약관 전문 보기"
                 onPress={()=>{
-                    this.props.navigation.navigate('')
+                    Linking.openURL('https://www.notion.so/halfdelivery/cocoaPod-b41e6ab1cf434565a51eb56183c3fc4d')
                 }}
             />
             <Button

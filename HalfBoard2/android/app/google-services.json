@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "115629094583",
+    "firebase_url": "https://boardtest-c8980-default-rtdb.firebaseio.com",
+    "project_id": "boardtest-c8980",
+    "storage_bucket": "boardtest-c8980.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:115629094583:android:d9759acebeea0b7b2fbf32",
+        "android_client_info": {
+          "package_name": "com.halfboard2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "115629094583-iobo2716ntonpi4vhj8l394vjroee46n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5U5k5rxDBEpO7NxoCQlbCnxhzlWlTqjU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "115629094583-iobo2716ntonpi4vhj8l394vjroee46n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

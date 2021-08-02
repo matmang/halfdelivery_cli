@@ -1,5 +1,8 @@
 apply plugin: "com.android.application"
 
+// Firebase 세팅
+apply plugin: 'com.google.gms.google-services' // <- Add this line
+
 import com.android.build.OutputFile
 
 /**

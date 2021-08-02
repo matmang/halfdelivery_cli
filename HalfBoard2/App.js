@@ -14,6 +14,23 @@ import PoliciesBoard from './src/screens/policiesBoard';
 import TempHome from './src/screens/tempHome';
 
 
+// Firebase 설정!!
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// var firebaseConfig = {
+//   apiKey: "AIzaSyCpdiRHq1totaX501PRcvW_RKdb4EbE_04",
+//   authDomain: "boardtest-c8980.firebaseapp.com",
+//   databaseURL: "https://boardtest-c8980-default-rtdb.firebaseio.com",
+//   projectId: "boardtest-c8980",
+//   storageBucket: "boardtest-c8980.appspot.com",
+//   messagingSenderId: "115629094583",
+//   appId: "1:115629094583:web:60dba51ab914b6c22fbf32",
+//   measurementId: "G-97RR6JHHBK"
+// };
+// // Initialize Firebase
+// firebase.initializeApp(firebaseConfig);
+// firebase.analytics();
+
 const Stack = createStackNavigator(); // 스크린, 네비게이터 이 두개의 프로퍼티를 리턴 하는 함수임.
 
 class App extends Component {

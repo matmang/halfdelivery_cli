@@ -1,12 +1,62 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, Button, Pressable, TouchableOpacityBase, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback } from 'react-native';
+import { color, set } from 'react-native-reanimated';
 
 class MakeMatching extends Component {
+    // state값을 초기화 하는 과정입니다.
+    constructor(props) { // render함수보다 먼저 실행이 되면서 그 컴포넌트를 초기화 해주고싶은 코드를 constructor 안에 작성합니다.
+        super(props); 
+        this.state = {
+            category: undefined,
+            store: undefined,
+            buttonPressed: false,
+            buttonPressed2: false,
+          }
+    }
+
+    // MatchingRequestHost 스크린으로 넘어갈 수 있는지, 검증하기 위한 함수.
+    toMatHost = () => {
+        if (this.state === null) {
+            alert('오류: state 가 null 입니다.')
+        } else {
+            if (this.state.category === undefined && this.state.store === undefined) {
+                alert('카테고리와 음식점을 골라주세요')
+            } else if (this.state.category === undefined && this.state.store !== undefined) {
+                alert('카테고리을 골라주세요')
+            } else if (this.state.store === undefined && this.state.category !== undefined) {
+                alert('음식점을 골라주세요')
+            } else if (this.state.category !== undefined && this.state.store !== undefined) {                
+                this.props.navigation.navigate('MatchingRequestHost', {
+                    category: this.state.category,
+                    store: this.state.store,
+                })
+            }
+        }
+    }
+
+    // 버튼 클릭 여부 (state 연습)
+    ButtonPressed = () => {
+        (this.state.buttonPressed === false) 
+        ? this.setState({buttonPressed: true})
+        : this.setState({buttonPressed: false})
+    }
+    
+    // // 함수 만들기 연습.
+    // ButtonPressedTarget = (target) => {
+    //     (this.state.(target) === false) 
+    //     ? this.setState({(target): true})
+    //     : this.setState({(target): false})
+    // }
+
+
+
+
   render () {
-      state = {
-        category: 'unselected',
-        store: 'unselected',
-      }
+    //   state = {
+    //     category: 'amoogeona',
+    //     store: 'amoogeona',
+    //     buttonPressed: false,
+    //   }
 
       return (
         <View style={{
@@ -15,39 +65,60 @@ class MakeMatching extends Component {
             // justifyContent: 'center', // 세로 정렬
             // paddingVertical: 100
         }}>
-            <View style={styles.top1o4}>
+            <View>
                 <Text style={styles.headerText}>음식 카테고리 선택</Text>
-                <Button
-                    color='#003399'
-                    title="한식"
+            </View>
+            <View style={styles.h25}>
+                <TouchableHighlight 
+                    style={this.state.buttonPressed ? styles.pressed : styles.notPressed} 
+                    underlayColor='red'
                     onPress={()=>{ // 버튼 누르면 category 할당.
                         this.setState({
                             category: '한식'
                         })
+                        this.ButtonPressed()
                     }}
-                />
-             </View>
-            
-            <Text style={styles.headerText}>음식점 선택</Text>
-            <Button
-                title="한그릇"
-                onPress={()=>
-                    this.setState({ // 버튼 누르면 store 할당.
-                        store: '한그릇'
-                    })
-                }
-            />
-            <View style={styles.bot1o4}>
-                <TouchableHighlight 
-                    style={styles.touchableStyle} 
-                    underlayColor='red'
-                    onPress={()=>
-                        // alert('여기에 state 가 와야돼..')
-                    this.props.navigation.navigate('AskMatchingHost', {
-                    })
-                  }
                 > 
-                    <Text style={styles.text}>매칭방 만들기</Text>
+                    <Text style={styles.textPressed}>
+                        한식
+                    </Text>
+                </TouchableHighlight>
+             </View>
+            <View>
+                <Text style={styles.headerText}>
+                    음식점 선택
+                </Text>
+            </View>
+            <View style={styles.h25}>
+                <TouchableHighlight 
+                    style={this.state.buttonPressed2 ? styles.pressed : styles.notPressed} 
+                    // disabled='true'
+                    underlayColor='red'
+                    onPress={()=>{ // 버튼 누르면 category 할당.
+                        this.setState({
+                            store: '한그릇'
+                        })
+                        this.ButtonPressedTarget(buttonPressed2)
+                    }}
+                    // onPressIn={
+
+                    // }
+                    > 
+                        <Text style={styles.textPressed}>
+                            한그릇
+                        </Text>
+                    </TouchableHighlight>
+            </View>
+            
+            <View style={styles.h10}>
+                <TouchableHighlight 
+                    style={this.state.buttonPressed ? styles.pressed : styles.notPressed} 
+                    underlayColor='red'
+                    onPress={()=> this.toMatHost()}
+                > 
+                    <Text style={styles.textPressed}>
+                        매칭방 만들기
+                    </Text>
                 </TouchableHighlight>
             </View>
             
@@ -56,31 +127,49 @@ class MakeMatching extends Component {
   } 
 }
 
+
+
 const styles = StyleSheet.create({
     headerText: {
         fontSize: 20,
     },
-    bot1o4: {
-        width: '100%',
+    h25: {
+        width: '95%',
+        borderRadius: 10,
         height: '25%',
-        marginTop: 200,
+        marginVertical: 10,
         padding: 10,
-        backgroundColor: 'lightgrey',
+        backgroundColor: 'orange',
         alignItems: 'center',
     },
-    top1o4: {
-        width: '100%',
-        height: '25%',
-        marginTop: 10,
+    h10: {
+        width: '95%',
+        borderRadius: 10,
+        height: '10%',
+        marginVertical: 10,
         padding: 10,
-        backgroundColor: 'lightgrey'
+        backgroundColor: 'pink',
+        alignItems: 'center',
+        justifyContent: 'flex-end',
     },
-    touchableStyle: {
+    
+    pressed: {
         backgroundColor:'#003399',
         width: '80%',
+        borderRadius: 10,
+    },
+    notPressed: {
+        backgroundColor:'lightgrey',
+        width: '80%',
+        borderRadius: 10,
       },
-    text: {
+    textPressed: {
         color:'pink',
+        textAlign: 'center',
+        fontSize:50,
+    },
+    textNotPressed: {
+        color:'white',
         textAlign: 'center',
         fontSize:50,
     }

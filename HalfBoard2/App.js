@@ -5,8 +5,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import MakeMatching from './src/screens/makeMatching';
-import AskMatchingClient from './src/screens/askMatchingClient';
-import AskMatchingHost from './src/screens/askMatchingHost';
+import MatchingRequestClient from './src/screens/matchingRequestClient';
+import MatchingRequestHost from './src/screens/matchingRequestHost';
 import MatchingSuccess from './src/screens/matchingSuccess';
 import MatchingFailed from './src/screens/matchingFailed';
 import InfoBoard from './src/screens/infoBoard';
@@ -54,16 +54,16 @@ class App extends Component {
             }}
           />
           <Stack.Screen 
-            name='AskMatchingHost' 
-            component={AskMatchingHost}
+            name='MatchingRequestHost' 
+            component={MatchingRequestHost}
             options={{
               title: '매칭 요청중 - Host'
 
             }}
           />
           <Stack.Screen 
-            name='AskMatchingClient' 
-            component={AskMatchingClient}
+            name='MatchingRequestClient' 
+            component={MatchingRequestClient}
             options={{
               title: '매칭 요청하기 - Client'
 

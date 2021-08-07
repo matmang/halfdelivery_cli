@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import Btn from '../../components/Auth/Btn';
 import Input from '../../components/Auth/Input';
 import DismissKeyboard from '../../components/DismissKeyboard';
+import {authService} from '../../firebase';
+import {isEmail} from '../../utils';
 
 const Container = styled.View`
   flex: 1;
@@ -16,19 +18,39 @@ const InputContainer = styled.View`
 `;
 
 export default () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const handleSubmit = () => alert(username);
+  const validateForm = () => {
+    if (email === '' || password === '') {
+      alert('All fields are required.');
+      return;
+    }
+    if (!isEmail(email)) {
+      alert('Please add a valid email.');
+      return;
+    }
+  };
+  const handleSubmit = async () => {
+    validateForm();
+    try {
+      const data = await authService.createUserWithEmailAndPassword(
+        email,
+        password,
+      );
+    } catch (e) {
+      console.warn(e);
+    }
+  };
   return (
     <DismissKeyboard>
       <Container>
         <KeyboardAvoidingView behavior="position">
           <InputContainer>
             <Input
-              value={username}
-              placeholder="Username"
+              value={email}
+              placeholder="Email"
               autoCapitalize="none"
-              stateFn={setUsername}
+              stateFn={setEmail}
             />
             <Input
               value={password}

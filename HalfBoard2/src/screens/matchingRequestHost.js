@@ -13,9 +13,9 @@ class MatchingRequestHost extends Component {
             <Text>매칭 요청중</Text>
             <Text>[ 주문 내역 창 ]</Text>
             <Text>
-                {this.props.route.params.category}
-                 그리고 
-                {this.props.route.params.store}
+                {this.props.route.params.categoryName}
+                #####
+                {this.props.route.params.storeName}
             </Text>
             <Button
                 style={styles.buttonStyle}

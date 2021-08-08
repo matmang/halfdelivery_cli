@@ -4,7 +4,7 @@ import { TextInput, Button, View, Text, StyleSheet, ScrollView } from 'react-nat
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import MakeMatching from './src/screens/makeMatching';
+import MakeMatching from './src/screens/makeMatching/makeMatching';
 import MatchingRequestClient from './src/screens/matchingRequestClient';
 import MatchingRequestHost from './src/screens/matchingRequestHost';
 import MatchingSuccess from './src/screens/matchingSuccess';
@@ -37,7 +37,7 @@ class App extends Component {
   render() { 
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='TempHome'>
+        <Stack.Navigator initialRouteName='MakeMatching'>
           <Stack.Screen
             name='TempHome' 
             component={TempHome}

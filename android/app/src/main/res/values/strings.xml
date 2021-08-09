@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">halfdelivery</string>
+    <string name="kakao_app_key">e10f8aebbde6fc8ce404e949844c7505</string>
 </resources>

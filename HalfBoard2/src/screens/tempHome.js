@@ -21,14 +21,14 @@ class TempHome extends Component {
                 style={styles.buttonStyle}
                 title="매칭 요청중 - Host"
                 onPress={()=>{
-                    this.props.navigation.navigate('FindPartners')
+                    this.props.navigation.navigate('MatchingRequestHost')
                 }}
             />
             <Button
                 style={styles.buttonStyle}
                 title="매칭 요청하기 - Client"
                 onPress={()=>{
-                    this.props.navigation.navigate('AskMatching')
+                    this.props.navigation.navigate('MatchingRequestClient')
                 }}
             />
             <Button

@@ -4,7 +4,7 @@ import React, { Component, useState, useEffect } from 'react';
 import { StyleSheet, View, Text, Button, Pressable, TouchableOpacityBase, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback } from 'react-native';
 import { FlingGestureHandler } from 'react-native-gesture-handler';
 import { color } from 'react-native-reanimated';
-import Styles from '../../assets/styles'
+import Styles from '../assets/styles'
 // import CategoryButton from './btns_makeMatching'
 
 const MakeMatching = () => {
@@ -83,7 +83,7 @@ const MakeMatching = () => {
             <View style={{margin:2}}>
                 <Text style={Styles.headerText}>음식 카테고리 선택</Text>
             </View>
-            <View style={Styles.h25}>
+            <View style={Styles.h25row}>
                 <CategoryButton title='한식'/>
                 <CategoryButton title='일식'/>
                 <CategoryButton title='중식'/>
@@ -93,7 +93,7 @@ const MakeMatching = () => {
                     음식점 선택
                 </Text>
             </View>
-            <View style={Styles.h25}>
+            <View style={Styles.h25row}>
                 <StoreButton title='크레이지 카츠'/>
                 <StoreButton title='한그릇'/>
                 <StoreButton title='시엔'/>

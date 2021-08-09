@@ -4,7 +4,7 @@ import { TextInput, Button, View, Text, StyleSheet, ScrollView } from 'react-nat
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import MakeMatching from './src/screens/makeMatching/makeMatching';
+import MakeMatching from './src/screens/makeMatching';
 import MatchingRequestClient from './src/screens/matchingRequestClient';
 import MatchingRequestHost from './src/screens/matchingRequestHost';
 import MatchingSuccess from './src/screens/matchingSuccess';
@@ -37,7 +37,7 @@ class App extends Component {
   render() { 
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName='MakeMatching'>
+        <Stack.Navigator initialRouteName='TempHome'>
           <Stack.Screen
             name='TempHome' 
             component={TempHome}
@@ -50,7 +50,6 @@ class App extends Component {
             component={MakeMatching}
             options={{
               title: '매칭방 만들기'
-
             }}
           />
           <Stack.Screen 
@@ -66,7 +65,6 @@ class App extends Component {
             component={MatchingRequestClient}
             options={{
               title: '매칭 요청하기 - Client'
-
             }}
           />
           <Stack.Screen 
@@ -74,7 +72,6 @@ class App extends Component {
             component={MatchingSuccess}
             options={{
               title: '매칭 성공'
-
             }}
           />
           <Stack.Screen 
@@ -82,7 +79,6 @@ class App extends Component {
             component={MatchingFailed}
             options={{
               title: '매칭 실패'
-
             }}
           />
          <Stack.Screen 
@@ -90,7 +86,6 @@ class App extends Component {
             component={InfoBoard}
             options={{
               title: '공지사항'
-
             }}
           />
           <Stack.Screen 
@@ -98,35 +93,12 @@ class App extends Component {
             component={PoliciesBoard}
             options={{
               title: '약관 및 정책'
-
             }}
           />
         </Stack.Navigator>
       </NavigationContainer>
     )
   }
-
-  // state = {
-  //   myTextInput: '', // myTextInput 선언 및 초기화.
-  //   ChickenPizzaDosirak: ['치킨', '피자', '도시락']
-  // }
-
-  // // event 인자를 받고, myTextInput 를 event 로 업데이트 하는 함수를 만들자.
-  // onChangeInput = (event) => {
-  //   this.setState({
-  //       myTextInput: event // 업데이트
-  //   })
-  // }
-
-  // onAddTextInput = () => {
-  //   this.setState(prevState => {
-  //     return {
-  //       myTextInput: '', // 버튼누르고, 재입력시 이전에 썼던 텍스트 지워주기 위해서 추가.
-  //       ChickenPizzaDosirak: [...prevState.ChickenPizzaDosirak, prevState.myTextInput]
-  //     }
-  //   })
-  // }
-
 }
 
 const styles = StyleSheet.create({
@@ -165,8 +137,6 @@ const styles = StyleSheet.create({
     fontSize: 25,
     padding: 10,
   },
-
-
 })
 
 export default App;

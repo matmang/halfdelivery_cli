@@ -7,7 +7,7 @@ import colors from '../../colors';
 const {width} = Dimensions.get('screen');
 
 const Button = styled.View`
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   padding: 12.5px 0px;
   align-items: center;
   border-radius: 30px;

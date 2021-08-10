@@ -1,11 +1,12 @@
 import { useNavigation } from '@react-navigation/native';
 import { BackgroundColor } from 'chalk';
 import React, { Component, useState, useEffect } from 'react';
+import { useSetState } from 'react-use';
 import { StyleSheet, View, Text, Button, Pressable, TouchableOpacityBase, TouchableHighlight, TouchableOpacity, TouchableNativeFeedback, TouchableWithoutFeedback } from 'react-native';
 import { FlingGestureHandler } from 'react-native-gesture-handler';
 import { color } from 'react-native-reanimated';
 import Styles from '../assets/styles'
-// import CategoryButton from './btns_makeMatching'
+
 
 const MakeMatching = () => {
     // state값
@@ -15,6 +16,16 @@ const MakeMatching = () => {
 
     let [categoryName, setCategoryName] = useState(undefined);
     let [storeName, setStoreName] = useState(undefined);
+
+    // 위 코드 useSetState 훅 이용해서 refactoring 중입니다. - 0810 수민.
+    const [categories, setCategories] = useSetState({
+        korean: false,
+        japanese: false,
+        chinese: false,
+        western: false,
+    })
+
+
 
     // navigation
     const navigation = useNavigation();

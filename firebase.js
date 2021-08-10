@@ -22,3 +22,11 @@ export const authService = firebase.auth();
 export const dbService = firebase.firestore();
 
 export const storageService = firebase.storage();
+
+export const signup = async ({email, password}) => {
+  const {user} = await authService.createUserWithEmailAndPassword(
+    email,
+    password,
+  );
+  return user;
+};

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {KeyboardAvoidingView} from 'react-native';
+import {KeyboardAvoidingView, Platform} from 'react-native';
 import styled from 'styled-components';
 import Btn from '../../components/Auth/Btn';
 import Input from '../../components/Auth/Input';
@@ -7,8 +7,7 @@ import DismissKeyboard from '../../components/DismissKeyboard';
 import {authService, firebaseInstance} from '../../firebase';
 import {isEmail} from '../../utils';
 import {GoogleSignin} from '@react-native-community/google-signin';
-import {login as loginKakao} from '@react-native-seoul/kakao-login';
-import {NaverLogin} from '@react-native-seoul/naver-login';
+import {KakaoPress, LoginNaver} from '../../components/Auth/KakaoNaver';
 
 const Container = styled.View`
   flex: 1;
@@ -23,12 +22,6 @@ const InputContainer = styled.View`
 const ButtonContainer = styled.View`
   margin-bottom: 30px;
 `;
-
-const androidkeys = {
-  kConsumerKey: 'v_Zwv8BgHTwbQUNQSrEu',
-  kConsumerSecret: 'pSUBUMgJXG',
-  kServiceAppName: '하프딜리버리',
-};
 
 export default () => {
   useEffect(() => {
@@ -69,21 +62,6 @@ export default () => {
       firebaseInstance.auth.GoogleAuthProvider.credential(idToken);
     return authService.signInWithCredential(googleCredential);
   };
-  const KakaoPress = async () => {
-    const {idToken} = await loginKakao();
-  };
-  const NaverPress = props => {
-    return new Promise((resolve, reject) => {
-      NaverLogin.login(props, (err, token) => {
-        console.log(`\n\n  Token is fetched  :: ${token} \n\n`);
-        if (err) {
-          reject(err);
-          return;
-        }
-        resolve(token);
-      });
-    });
-  };
   return (
     <DismissKeyboard>
       <Container>
@@ -121,7 +99,7 @@ export default () => {
             text={'Sign with Naver'}
             name="naver"
             accent
-            onPress={NaverPress(androidkeys)}
+            onPress={LoginNaver}
           />
         </ButtonContainer>
       </Container>

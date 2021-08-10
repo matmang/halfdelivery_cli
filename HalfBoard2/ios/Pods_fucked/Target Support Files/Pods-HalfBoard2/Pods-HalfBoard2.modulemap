@@ -1,6 +1,0 @@
-framework module Pods_HalfBoard2 {
-  umbrella header "Pods-HalfBoard2-umbrella.h"
-
-  export *
-  module * { export * }
-}

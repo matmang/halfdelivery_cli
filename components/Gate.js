@@ -3,6 +3,7 @@ import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import Auth from '../navigations/Auth';
+import Main from '../navigations/Main';
 import {logOut} from '../redux/usersSlice';
 
 export default () => {
@@ -10,13 +11,7 @@ export default () => {
   const dispatch = useDispatch();
   return (
     <NavigationContainer>
-      {isLoggedIn ? (
-        <Auth />
-      ) : (
-        <TouchableOpacity onPress={() => dispatch(logOut())}>
-          <Text>Log Out</Text>
-        </TouchableOpacity>
-      )}
+      {isLoggedIn ? <Main /> : <Auth />}
     </NavigationContainer>
   );
 };

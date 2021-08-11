@@ -27,8 +27,33 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>kakaoe10f8aebbde6fc8ce404e949844c7505</string>
+			</array>
+		</dict>
+	</array>
+
 	<key>CFBundleVersion</key>
 	<string>1</string>
+
+	<!-- 카카오 로그인 !!! https://github.com/react-native-seoul/react-native-naver-login -->
+	<key>KAKAO_APP_KEY</key>
+	<string>e10f8aebbde6fc8ce404e949844c7505</string> <!--하프하프 네이티브 앱 키-->
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>kakaokompassauth</string>
+		<string>storykompassauth</string>
+		<string>kakaolink</string>
+	</array>
+	<!-- 카카오 로그인 !!!-->
+
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>

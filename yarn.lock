@@ -1694,7 +1694,7 @@
 
 "@react-native-seoul/kakao-login@^3.3.3":
   version "3.3.3"
-  resolved "https://registry.npmjs.org/@react-native-seoul/kakao-login/-/kakao-login-3.3.3.tgz"
+  resolved "https://registry.yarnpkg.com/@react-native-seoul/kakao-login/-/kakao-login-3.3.3.tgz#ce01c08d4b9e4fefa65f2e3851c49efcc0d5fa7c"
   integrity sha512-rDmeFkAg161kLOMcTO/z463pexZulUb6HJokDXKU+bQ2EiDnIk3KC0dqDgXaF2Yxn/1cfMUAu5ndl5YfPbla4w==
   dependencies:
     dooboolab-welcome "^1.3.0"

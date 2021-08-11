@@ -1,7 +1,7 @@
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-platform :ios, '11.0' # pod install 사용하기 위해선 11.0 버전 이상이어야 함. 참조) https://github.com/react-native-seoul/react-native-kakao-login
+platform :ios, '11.0' # 카카오로그인 pod install 사용하기 위해선 11.0 버전 이상이어야 함. 참조) https://github.com/react-native-seoul/react-native-kakao-login
 
 target 'halfdelivery' do
   config = use_native_modules!

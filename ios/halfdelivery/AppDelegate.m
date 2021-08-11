@@ -13,7 +13,8 @@
 #import <FlipperKitReactPlugin/FlipperKitReactPlugin.h>
 // 네이버 로그인 관련. https://github.com/react-native-seoul/react-native-naver-login
 #import <NaverThirdPartyLogin/NaverThirdPartyLoginConnection.h>
-
+// 카카오 로그인 관련. https://github.com/react-native-seoul/react-native-kakao-login
+#import <RNKakaoLogins.h>
 
 static void InitializeFlipper(UIApplication *application) {
   FlipperClient *client = [FlipperClient sharedClient];
@@ -56,9 +57,19 @@ static void InitializeFlipper(UIApplication *application) {
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
-  NSLog(@"\n\n\n  url scheme :: %@   \n\n\n .", url.scheme);
+  
+  // --- 카카오 로그인 관련. https://github.com/react-native-seoul/react-native-kakao-login ---
+  if([RNKakaoLogins isKakaoTalkLoginUrl:url]) {
+      return [RNKakaoLogins handleOpenUrl: url];
+  }
 
-  return [self handleWithUrl:url];
+  return NO;
+  // --- 카카오 로그인 관련. ---
+
+  // ---- 임시 주석 ----
+  // NSLog(@"\n\n\n  url scheme :: %@   \n\n\n .", url.scheme);
+  // return [self handleWithUrl:url];
+  // ---- 임시 주석 ----
 }
 
 // 네이버 로그인 관련. https://github.com/react-native-seoul/react-native-naver-login

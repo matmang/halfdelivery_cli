@@ -44,5 +44,8 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
 }

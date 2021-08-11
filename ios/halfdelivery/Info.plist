@@ -2,6 +2,13 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<!-- 네이버 로그인 !!! https://github.com/react-native-seoul/react-native-naver-login -->
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+     <string>naversearchapp</string>
+     <string>naversearchthirdlogin</string>
+    </array>
+	<!-- 네이버 로그인 !!! -->
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>

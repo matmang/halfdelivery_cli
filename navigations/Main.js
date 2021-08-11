@@ -14,9 +14,9 @@ const Main = createStackNavigator();
 
 export default () => (
   <Main.Navigator
+    initialRouteName="TempHome"
     screenOptions={{
-      headerBackTitleVisible: false,
-      headerTransparent: true,
+
     }}>
     <Main.Screen
       name="TempHome"

@@ -1,6 +1,6 @@
-import {useNavigation} from '@react-navigation/native';
 import {BackgroundColor} from 'chalk';
 import React, {Component, useState, useEffect} from 'react';
+import {useNavigation} from '@react-navigation/native';
 import {useSetState} from 'react-use';
 import {
   StyleSheet,
@@ -78,7 +78,7 @@ const MakeMatching = () => {
     );
   };
 
-  const toMatHost = () => {
+  const toMatHostClient = targetScreen => {
     if (category === false && store === false) {
       alert('카테고리와 음식점을 골라주세요');
     } else if (category === false && store !== false) {
@@ -87,7 +87,7 @@ const MakeMatching = () => {
       alert('음식점을 골라주세요');
     } else {
       // 모두 다 골랐으면, 다음 스크린으로 이동.
-      navigation.navigate('MatchingRequestHost', {
+      navigation.navigate(targetScreen, {
         categoryName,
         storeName,
       });
@@ -117,15 +117,28 @@ const MakeMatching = () => {
         <StoreButton title="한그릇" />
         <StoreButton title="시엔" />
       </View>
-      <View style={Styles.h10}>
-        <TouchableHighlight
+      <View style={Styles.h10row}>
+        {/*//! 디자인 시안 나오기 전까진, 일단 Button 으로... */}
+        {/* <TouchableHighlight
           style={Styles.notPressed}
           underlayColor="red"
           onPress={() => {
-            toMatHost();
+            toMatHostClient('MatchingRequestHost');
           }}>
           <Text style={Styles.textPressed}>매칭방 만들기</Text>
-        </TouchableHighlight>
+        </TouchableHighlight> */}
+        <Button
+          title="매칭 요청하기"
+          onPress={() => {
+            toMatHostClient('MatchingRequestClient');
+          }}
+        />
+        <Button
+          title="매칭방 만들기"
+          onPress={() => {
+            toMatHostClient('MatchingRequestHost');
+          }}
+        />
       </View>
     </View>
   );

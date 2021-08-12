@@ -1,50 +1,60 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Text, Button} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import CircularProgress from 'react-native-circular-progress-indicator'; // https://www.npmjs.com/package/react-native-circular-progress-indicator
+import Styles from '../../assets/styles';
 
-class MatchingRequestClient extends Component {
-  render(route) {
-    const {data} = this.props.route;
-    const category = data ? data.category : '한식';
-    const store = data ? data.store : '한그릇';
+const MatchingRequestClient = props => {
+  const navigation = useNavigation();
 
-    return (
-      <View
-        style={{
-          flex: 1,
-          alignItems: 'center', // 가로 정렬
-          justifyContent: 'center', // 세로 정렬
-          paddingVertical: 100,
-        }}>
-        <Text>매칭 요청중</Text>
-        <Text>| 주문 내역 창 |</Text>
-
-        {/* <Text>{data}</Text> */}
-        <Text>{JSON.stringify(category)}</Text>
-        <Text>{JSON.stringify(store)}</Text>
-
-        <Text>내가 주문할 음식은 [Picker]</Text>
-        <Button
-          style={styles.buttonStyle}
-          title="매칭 요청하기"
-          onPress={() => {}}
-        />
-        <Button
-          style={styles.buttonStyle}
-          title="다른 매칭 선택하기"
-          onPress={() => {}}
+  return (
+    <View
+      style={{
+        flex: 1,
+        alignItems: 'center', // 가로 정렬
+        flexDirection: 'column',
+      }}>
+      <View style={{margin: 2}}>
+        <Text style={Styles.headerText}>매칭 요청중</Text>
+      </View>
+      <View style={Styles.h25grey}>
+        <CircularProgress
+          value={0}
+          initialValue={10}
+          maxValue={10}
+          radius={120}
+          textColor={'#ecf0f1'}
+          duration={10000}
+          onAnimationComplete={() =>
+            alert('시간 내에 상대방을 찾지 못하였습니다.')
+          }
         />
       </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  buttonStyle: {
-    marginTop: 100,
-    marginBottom: 100,
-    marginVertical: 10,
-    paddingTop: 10,
-  },
-});
+      <View style={{margin: 2}}>
+        <Text style={Styles.headerText}>[ 주문 내역 창 ]</Text>
+      </View>
+      <View style={Styles.h25col}>
+        <Text style={{fontSize: 40, fontWeight: 'bold', margin: 10}}>
+          {props.route.params.categoryName}
+        </Text>
+        <Text style={{fontSize: 40, fontWeight: 'bold', margin: 10}}>
+          {props.route.params.storeName}
+        </Text>
+        <Text style={{fontSize: 30, fontWeight: 'bold', margin: 10}}>
+          최소주문금액: 12,000원
+        </Text>
+      </View>
+      <View style={{flex: 1}}>
+        <Button title="예치금 충전하기" onPress={() => {}} />
+        <Button
+          title="매칭 취소하기"
+          onPress={() => {
+            navigation.navigate('TempHome');
+          }}
+        />
+      </View>
+    </View>
+  );
+};
 
 export default MatchingRequestClient;

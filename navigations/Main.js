@@ -1,23 +1,19 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import TempHome from '../screens/Main/tempHome';
-import MakeMatching from '../screens/Main/makeMatching';
-import MatchingRequestClient from '../screens/Main/matchingRequestClient';
-import MatchingRequestHost from '../screens/Main/matchingRequestHost';
-import MatchingSuccess from '../screens/Main/matchingSuccess';
-import MatchingFailed from '../screens/Main/matchingFailed';
-import InfoBoard from '../screens/Main/infoBoard';
-import PoliciesBoard from '../screens/Main/policiesBoard';
+import TempHome from '../screens/Main/TempHome';
+import MakeMatching from '../screens/Main/MakeMatching';
+import MatchingRequestClient from '../screens/Main/MatchingRequestClient';
+import MatchingRequestHost from '../screens/Main/MatchingRequestHost';
+import MatchingSuccess from '../screens/Main/MatchingSuccess';
+import MatchingFailed from '../screens/Main/MatchingFailed';
+import InfoBoard from '../screens/Main/InfoBoard';
+import PoliciesBoard from '../screens/Main/PoliciesBoard';
 
 const Main = createStackNavigator();
 
 export default () => (
-  <Main.Navigator
-    initialRouteName="TempHome"
-    screenOptions={{
-
-    }}>
+  <Main.Navigator initialRouteName="TempHome" screenOptions={{}}>
     <Main.Screen
       name="TempHome"
       component={TempHome}

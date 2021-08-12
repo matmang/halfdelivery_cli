@@ -40,7 +40,7 @@ const Styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
   },
-  h10: {
+  h10row: {
     width: '95%',
     borderRadius: 10,
     height: '10%',
@@ -48,6 +48,8 @@ const Styles = StyleSheet.create({
     paddingVertical: 2,
     backgroundColor: '#22326E',
     alignItems: 'center',
+    justifyContent: 'space-evenly',
+    flexDirection: 'row',
   },
 
   pressed: {

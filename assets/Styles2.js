@@ -38,7 +38,7 @@ const Styles = StyleSheet.create({
     flex: 3.5,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
   },
   h10row: {
     width: '95%',

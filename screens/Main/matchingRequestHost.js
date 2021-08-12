@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {StyleSheet, View, Text, Button} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import CircularProgress from 'react-native-circular-progress-indicator'; // https://www.npmjs.com/package/react-native-circular-progress-indicator
-import Styles from '../../assets/styles';
+import Styles from '../../assets/Styles2';
 
 const MatchingRequestHost = props => {
   const navigation = useNavigation();
@@ -35,10 +35,10 @@ const MatchingRequestHost = props => {
       </View>
       <View style={Styles.h25col}>
         <Text style={{fontSize: 40, fontWeight: 'bold', margin: 10}}>
-          {props.route.params.categoryName}
+          {props.route.params.category}
         </Text>
         <Text style={{fontSize: 40, fontWeight: 'bold', margin: 10}}>
-          {props.route.params.storeName}
+          {props.route.params.store}
         </Text>
         <Text style={{fontSize: 30, fontWeight: 'bold', margin: 10}}>
           최소주문금액: 12,000원

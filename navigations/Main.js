@@ -13,7 +13,7 @@ import PoliciesBoard from '../screens/Main/PoliciesBoard';
 const Main = createStackNavigator();
 
 export default () => (
-  <Main.Navigator initialRouteName="TempHome" screenOptions={{}}>
+  <Main.Navigator initialRouteName="MakeMatching" screenOptions={{}}>
     <Main.Screen
       name="TempHome"
       component={TempHome}

@@ -8,7 +8,6 @@ import {color} from 'react-native-reanimated';
 import Styles from '../../assets/Styles2';
 
 const MakeMatching = () => {
-  
   const [count, setCount] = useState(0);
   useEffect(() => {
     console.log('useEffect called', count);

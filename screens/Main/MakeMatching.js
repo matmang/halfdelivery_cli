@@ -1,5 +1,5 @@
 import {BackgroundColor} from 'chalk';
-import React, {useState, t} from 'react';
+import React, {useState, t, useEffect} from 'react';
 import {useNavigation} from '@react-navigation/native';
 import {useSetState} from 'react-use';
 import {View, Text, Button, TouchableHighlight, Pressable} from 'react-native';
@@ -8,11 +8,17 @@ import {color} from 'react-native-reanimated';
 import Styles from '../../assets/Styles2';
 
 const MakeMatching = () => {
-  // state값
-  let [category, setCategory] = useState(false);
-  let [store, setStore] = useState(false);
+  
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    console.log('useEffect called', count);
+  }, [count]);
 
-  console.log(category);
+  // state값
+  const [category, setCategory] = useState(false);
+  const [store, setStore] = useState(false);
+
+  console.log('render?');
 
   const navigation = useNavigation();
 
@@ -34,6 +40,7 @@ const MakeMatching = () => {
   //   );
   // };
 
+  //! 디자인 시안 나오기 전까진, 일단 Button 으로...
   const CategoryButton = props => {
     return (
       <View style={{margin: 10}}>
@@ -41,6 +48,8 @@ const MakeMatching = () => {
           title={props.name}
           onPress={() => {
             setCategory(props.name);
+            setCount(count + 1);
+            console.log(category);
           }}
         />
       </View>
@@ -61,11 +70,11 @@ const MakeMatching = () => {
   };
 
   const toMatHostClient = targetScreen => {
-    if (category === false && store === false) {
+    if (!category && !store) {
       alert('카테고리와 음식점을 골라주세요');
-    } else if (category === false && store !== false) {
+    } else if (!category && store) {
       alert('카테고리를 골라주세요');
-    } else if (category !== false && store === false) {
+    } else if (category && !store) {
       alert('음식점을 골라주세요');
     } else {
       // 모두 다 골랐으면, 다음 스크린으로 이동.
@@ -102,7 +111,6 @@ const MakeMatching = () => {
         <StoreButton name="바비든든" />
       </View>
       <View style={Styles.h10row}>
-        {/*//! 디자인 시안 나오기 전까진, 일단 Button 으로... */}
         <Button
           title="매칭 요청하기"
           onPress={() => {

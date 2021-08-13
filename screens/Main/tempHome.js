@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Text, Button} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import {useDispatch} from 'react-redux';
+import {logOut} from '../../redux/usersSlice';
 
 // https://github.com/streamich/react-use
 
 const TempHome = () => {
   const navigation = useNavigation();
+  const dispatch = useDispatch();
 
   return (
     <View
@@ -62,6 +65,11 @@ const TempHome = () => {
         onPress={() => {
           navigation.navigate('PoliciesBoard');
         }}
+      />
+      <Button
+        style={styles.buttonStyle}
+        title="로그아웃"
+        onPress={() => dispatch(logOut())}
       />
     </View>
   );

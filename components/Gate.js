@@ -1,6 +1,5 @@
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import {Text, TouchableOpacity} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import Auth from '../navigations/Auth';
 import Main from '../navigations/Main';

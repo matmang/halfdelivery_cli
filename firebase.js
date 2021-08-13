@@ -23,10 +23,16 @@ export const dbService = firebase.firestore();
 
 export const storageService = firebase.storage();
 
-export const signup = async ({email, password}) => {
+export const signup = async ({email, password, phoneNumber, name, school}) => {
   const {user} = await authService.createUserWithEmailAndPassword(
     email,
     password,
   );
+  await user.updateProfile({displayName: name, phoneNumber, school});
+  return user;
+};
+
+export const signin = async ({email, password}) => {
+  const {user} = await authService.signInWithEmailAndPassword(email, password);
   return user;
 };

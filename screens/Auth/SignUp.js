@@ -36,6 +36,7 @@ export default ({navigation: {navigate}}) => {
   useEffect(() => {
     const socialGoogleConfigure = async () => {
       await GoogleSignin.configure({
+        scopes: ['email'],
         webClientId:
           '271269689660-ql3c8s34ihsf3vvj4fdqec89uikupvge.apps.googleusercontent.com',
       });

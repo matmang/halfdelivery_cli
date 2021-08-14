@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "271269689660",
+    "project_id": "halfdelivery",
+    "storage_bucket": "halfdelivery.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271269689660:android:72a2d23d016f0ed47dc639",
+        "android_client_info": {
+          "package_name": "com.halfdelivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "271269689660-kbrhqpb58urh9k91pjs2ku728349vbbc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.halfdelivery",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "271269689660-ql3c8s34ihsf3vvj4fdqec89uikupvge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIHJ3OR4hJ2xntKFYIBr3fJ9_s58VLA-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "271269689660-ql3c8s34ihsf3vvj4fdqec89uikupvge.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

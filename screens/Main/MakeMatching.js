@@ -1,3 +1,5 @@
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable no-alert */
 import {BackgroundColor} from 'chalk';
 import React, {useState, t, useEffect} from 'react';
 import {useNavigation} from '@react-navigation/native';
@@ -21,32 +23,18 @@ const MakeMatching = () => {
 
   const navigation = useNavigation();
 
-  // const TestButton = props => {
-  //   const [isPress, setIsPress] = useState(false);
-  //   let touchProps = {
-  //     underlayColor: 'red',
-  //     style: isPress ? Styles.pressed : Styles.notPressed,
-  //     onPress: () => {
-  //       setIsPress(isPress ? false : true), setCategory(props.title);
-  //     },
-  //   };
-  //   return (
-  //     <View>
-  //       <TouchableHighlight {...touchProps}>
-  //         <Text>{props.title}</Text>
-  //       </TouchableHighlight>
-  //     </View>
-  //   );
-  // };
-
-  //! 디자인 시안 나오기 전까진, 일단 Button 으로...
+  // //! 디자인 시안 나오기 전까진, 일단 Button 으로...
+  const [isPressed, setIsPressed] = useState(false);
   const CategoryButton = props => {
     return (
       <View style={{margin: 10}}>
         <Button
+          color="skyblue" // {isPressed ? 'red' : 'grey'}
           title={props.name}
           onPress={() => {
             setCategory(props.name);
+            // alert(`${props.name}이 선택되었습니다.`);
+
             setCount(count + 1);
             console.log(category);
           }}
@@ -62,6 +50,7 @@ const MakeMatching = () => {
           title={props.name}
           onPress={() => {
             setStore(props.name);
+            // alert(`${props.name} 선택되었습니다.`);
           }}
         />
       </View>

@@ -1,14 +1,14 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import TempHome from '../screens/Main/TempHome_';
-import MakeMatching from '../screens/Main/MakeMatching_';
-import MatchingRequestClient from '../screens/Main/MatchingRequestClient_';
-import MatchingRequestHost from '../screens/Main/MatchingRequestHost_';
-import MatchingSuccess from '../screens/Main/MatchingSuccess_';
-import MatchingFailed from '../screens/Main/MatchingFailed_';
-import InfoBoard from '../screens/Main/InfoBoard_';
-import PoliciesBoard from '../screens/Main/PoliciesBoard_';
+import TempHome from '../screens/Main/TempHome';
+import MakeMatching from '../screens/Main/MakeMatching';
+import MatchingRequestClient from '../screens/Main/MatchingRequestClient';
+import MatchingRequestHost from '../screens/Main/MatchingRequestHost';
+import MatchingSuccess from '../screens/Main/MatchingSuccess';
+import MatchingFailed from '../screens/Main/MatchingFailed';
+import InfoBoard from '../screens/Main/InfoBoard';
+import PoliciesBoard from '../screens/Main/PoliciesBoard';
 
 const Main = createStackNavigator();
 

@@ -3,6 +3,19 @@ import {StyleSheet} from 'react-native';
 import {color, set} from 'react-native-reanimated';
 
 const Styles = StyleSheet.create({
+  centerize: {
+    flex: 1,
+    alignItems: 'center', // 가로 정렬
+    justifyContent: 'center', // 세로 정렬
+    paddingVertical: 100,
+  },
+  textInput: {
+    height: 40,
+    width: '80%',
+    margin: 10,
+    borderWidth: 1,
+    padding: 10,
+  },
   h25grey: {
     width: '95%',
     height: '25%',

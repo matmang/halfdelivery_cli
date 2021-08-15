@@ -3,6 +3,7 @@ import {StyleSheet, View, Text, Button, Linking} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 const PoliciesBoard = () => {
+  const navigation = useNavigation();
   return (
     <View
       style={{

@@ -913,9 +913,9 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@expo/config-plugins@^3.0.2":
+"@expo/config-plugins@^3.0.6":
   version "3.0.7"
-  resolved "https://registry.npmjs.org/@expo/config-plugins/-/config-plugins-3.0.7.tgz"
+  resolved "https://registry.yarnpkg.com/@expo/config-plugins/-/config-plugins-3.0.7.tgz#50870e26d34b11740a5841076c921729381d4319"
   integrity sha512-7YOoFtxB6XqDil+OlGXi7iredKHxXVFCAOIVfFyEDzO3oo0gBmWGmUnHgrPDvpMj0q+adCCh5BL8OcvGfc9ITQ==
   dependencies:
     "@expo/config-types" "^42.0.0"
@@ -1523,6 +1523,13 @@
   resolved "https://registry.npmjs.org/@protobufjs/utf8/-/utf8-1.1.0.tgz"
   integrity sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=
 
+"@react-native-async-storage/async-storage@^1.15.5":
+  version "1.15.5"
+  resolved "https://registry.yarnpkg.com/@react-native-async-storage/async-storage/-/async-storage-1.15.5.tgz#0d221a5ef1cd7a6494a42fcaad43136d68379afb"
+  integrity sha512-4AYehLH39B9a8UXCMf3ieOK+G61wGMP72ikx6/XSMA0DUnvx0PgaeaT2Wyt06kTrDTy8edewKnbrbeqwaM50TQ==
+  dependencies:
+    deep-assign "^3.0.0"
+
 "@react-native-community/async-storage@^1.12.1":
   version "1.12.1"
   resolved "https://registry.npmjs.org/@react-native-community/async-storage/-/async-storage-1.12.1.tgz"
@@ -1683,12 +1690,12 @@
   resolved "https://registry.npmjs.org/@react-native-community/google-signin/-/google-signin-5.0.0.tgz"
   integrity sha512-MvFHImmtlmE1kJZgZ9XaULm/OBuQ/AQWOCPr3NzYTUv2cCqyGwfFrealo5PS/fuL/InCGcfqK1k/1dZ+67Hjmg==
 
-"@react-native-firebase/app@^12.4.0":
-  version "12.4.0"
-  resolved "https://registry.npmjs.org/@react-native-firebase/app/-/app-12.4.0.tgz"
-  integrity sha512-zBA+LSBXOYBpDnO/n0EW2+cZlHyf8aYSHpyTKOIIt5QXj7DNuB46Hk2cRSXFxOZNOU6fiIuf8i9jFsWdYtOlpQ==
+"@react-native-firebase/app@^12.5.0":
+  version "12.5.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-12.5.0.tgz#6b394301a18917aa9fdf4c2a2b8191fea7478d93"
+  integrity sha512-QRbJaNZjS2Noj7Adcqom9ewrD78wNeC3yZTjsbDAeRUjb2wBk4J7mg6flPK+TW3bZaiCoj2NgqAbNqEmHLzIhw==
   dependencies:
-    "@expo/config-plugins" "^3.0.2"
+    "@expo/config-plugins" "^3.0.6"
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 

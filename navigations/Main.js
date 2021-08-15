@@ -9,16 +9,24 @@ import MatchingSuccess from '../screens/Main/MatchingSuccess';
 import MatchingFailed from '../screens/Main/MatchingFailed';
 import InfoBoard from '../screens/Main/InfoBoard';
 import PoliciesBoard from '../screens/Main/PoliciesBoard';
+import TempSendMsg from '../screens/Main/TempSendMsg';
 
 const Main = createStackNavigator();
 
 export default () => (
-  <Main.Navigator initialRouteName="MakeMatching" screenOptions={{}}>
+  <Main.Navigator initialRouteName="TempHome" screenOptions={{}}>
     <Main.Screen
       name="TempHome"
       component={TempHome}
       options={{
         title: '(임시) 홈',
+      }}
+    />
+    <Main.Screen
+      name="TempSendMsg"
+      component={TempSendMsg}
+      options={{
+        title: '메시지 테스트',
       }}
     />
     <Main.Screen

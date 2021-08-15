@@ -19,6 +19,13 @@ const TempHome = () => {
       }}>
       <Button
         style={styles.buttonStyle}
+        title="메시지 테스트"
+        onPress={() => {
+          navigation.navigate('TempSendMsg');
+        }}
+      />
+      <Button
+        style={styles.buttonStyle}
         title="매칭방 만들기"
         onPress={() => {
           navigation.navigate('MakeMatching');

@@ -1,3 +1,6 @@
+// --- Firestore Database ---
+
+// --- Firestore Database ---
 import firebase from 'firebase/app';
 require('firebase/auth');
 require('firebase/firestore');
@@ -22,7 +25,20 @@ export const authService = firebase.auth();
 export const dbService = firebase.firestore();
 
 export const storageService = firebase.storage();
-
+// --- Firestore Database ---
+export const onSubmit = data => {
+  dbService
+    .collection('nweets')
+    .add({
+      msg: data,
+      createdAt: Date.now(),
+    })
+    .then(() => {
+      console.log('Added!');
+    });
+  alert('함수 실행됨');
+};
+// --- Firestore Database ---
 export const signup = async ({email, password, phoneNumber, name, school}) => {
   const {user} = await authService.createUserWithEmailAndPassword(
     email,

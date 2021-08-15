@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react';
+import React, {Component, useEffect, useState} from 'react';
 import {StyleSheet, View, Text, Button, Linking, TextInput} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import Styles from '../../assets/Styles2';
@@ -6,19 +6,17 @@ import {dbService, onSubmit} from '../../firebase';
 
 const TempSendMsg = () => {
   const navigation = useNavigation();
-  const [text, setText] = useState('hhh');
-  //   const onSubmit = () => {
-  //     dbService
-  //       .collection('test')
-  //       .add({
-  //         msg: 'adasdsad',
-  //         createdAt: Date.now(),
-  //       })
-  //       .then(() => {
-  //         console.log('added!');
-  //       });
-  //     alert('함수 실행됨');
-  //   };
+  const [text, setText] = useState('empty haha');
+  const [texts, setTexts] = useState('empty haha');
+
+  const getNweets = async () => {
+    const dbNweets = dbService.collection('nweets').get();
+    alert(dbNweets);
+  };
+
+  useEffect(() => {
+    getNweets();
+  });
 
   return (
     <View style={Styles.centerize}>

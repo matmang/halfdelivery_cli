@@ -14,6 +14,8 @@
 		633765C802925BC9B08183B6 /* libPods-halfdelivery.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CFB0134351200DFFC2E66424 /* libPods-halfdelivery.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		87F3F2A71B0FADD0EA930027 /* libPods-halfdelivery-halfdeliveryTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6739A167A03822FF03580EB6 /* libPods-halfdelivery-halfdeliveryTests.a */; };
+		F03343FF26C91F5F0052DB4A /* google-services.json in Resources */ = {isa = PBXBuildFile; fileRef = F03343FE26C91F5F0052DB4A /* google-services.json */; };
+		F033440026C91F5F0052DB4A /* google-services.json in Resources */ = {isa = PBXBuildFile; fileRef = F03343FE26C91F5F0052DB4A /* google-services.json */; };
 		F9B4A20C69654BA1AA0A88F0 /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 46CB682D5AAB467C970756E5 /* NotoSansKR-Regular.otf */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,7 @@
 		A6C414487DE5415BE8C1E305 /* Pods-halfdelivery-halfdeliveryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-halfdelivery-halfdeliveryTests.debug.xcconfig"; path = "Target Support Files/Pods-halfdelivery-halfdeliveryTests/Pods-halfdelivery-halfdeliveryTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CFB0134351200DFFC2E66424 /* libPods-halfdelivery.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-halfdelivery.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F03343FE26C91F5F0052DB4A /* google-services.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "google-services.json"; sourceTree = "<group>"; };
 		F0922F5D26C2C9B400605502 /* halfdelivery-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "halfdelivery-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				F0922F5D26C2C9B400605502 /* halfdelivery-Bridging-Header.h */,
+				F03343FE26C91F5F0052DB4A /* google-services.json */,
 				13B07FAE1A68108700A75B9A /* halfdelivery */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* halfdeliveryTests */,
@@ -249,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F033440026C91F5F0052DB4A /* google-services.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +263,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				F03343FF26C91F5F0052DB4A /* google-services.json in Resources */,
 				F9B4A20C69654BA1AA0A88F0 /* NotoSansKR-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

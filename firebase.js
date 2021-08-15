@@ -1,11 +1,11 @@
 import firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore'; // 대체 왜... 업로드가 안되는거야
-import 'firebase/storage';
+require('firebase/auth');
+require('firebase/firestore');
+require('firebase/storage');
 
-// require('firebase/auth');
-// require('firebase/firestore');
-// require('firebase/storage');
+// import 'firebase/auth';
+// import 'firebase/firestore'; // 대체 왜... 업로드가 안되는거야
+// import 'firebase/storage';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAknDiBmdh0MHd1WKQq4L3uYZFA700pfCE',

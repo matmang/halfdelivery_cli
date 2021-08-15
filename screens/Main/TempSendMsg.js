@@ -10,10 +10,14 @@ const TempSendMsg = () => {
   const [text, setText] = useState('empty haha');
   const [texts, setTexts] = useState('empty haha');
 
-  const onSubmit = () => {
-    dbService.collection('test2').doc('doc').set({
+  const onSubmit = async () => {
+    // dbService.collection('test2').doc('doc').set({
+    //   msg: 'data',
+    //   createdAt: Date.now(),
+    // });
+    await dbService.collection('test2').add({
       msg: 'data',
-      createdAt: Date.now(),
+      //   createdAt: Date.now(),
     });
 
     alert('함수 실행됨');

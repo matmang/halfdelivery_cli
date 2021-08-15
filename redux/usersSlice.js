@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {signin} from '../firebase';
+import {authService, signin} from '../firebase';
 
 const userSlice = createSlice({
   name: 'users',
@@ -30,5 +30,14 @@ export const userLogin = form => async dispatch => {
     alert('Wrong user/password');
   }
 };
-
+export const socialLogin = form => async dispatch => {
+  try {
+    const data = await authService.signInWithCredential(form);
+    if (data.user.uid) {
+      dispatch(logIn(data.user.uid));
+    }
+  } catch (e) {
+    alert(e);
+  }
+};
 export default userSlice.reducer;

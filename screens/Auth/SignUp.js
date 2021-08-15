@@ -4,11 +4,17 @@ import styled from 'styled-components';
 import Btn from '../../components/Auth/Btn';
 import Input from '../../components/Auth/Input';
 import DismissKeyboard from '../../components/DismissKeyboard';
-import {authService, firebaseInstance, signup} from '../../firebase';
+import {signup} from '../../firebase';
 import {isEmail} from '../../utils';
 import {GoogleSignin} from '@react-native-community/google-signin';
-import {KakaoPress, LoginNaver} from '../../components/Auth/KakaoNaver';
+import {
+  GooglePress,
+  KakaoPress,
+  LoginNaver,
+} from '../../components/Auth/SocialLoginHandler';
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import {useDispatch} from 'react-redux';
+import {socialLogin} from '../../redux/usersSlice';
 
 const Container = styled.View`
   flex: 1;
@@ -26,6 +32,7 @@ const ButtonContainer = styled.View`
 `;
 
 export default ({navigation: {navigate}}) => {
+  const dispatch = useDispatch();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -68,15 +75,12 @@ export default ({navigation: {navigate}}) => {
       const user = await signup({email, password, phoneNumber, name, school});
       navigate('SignIn', {email, password});
     } catch (e) {
-      alert('signup Error');
+      alert(e);
     }
   };
-  const GooglePress = async () => {
-    const {idToken} = await GoogleSignin.signIn();
-    console.log(idToken);
-    const googleCredential =
-      firebaseInstance.auth.GoogleAuthProvider.credential(idToken);
-    return authService.signInWithCredential(googleCredential);
+  const googleSubmit = async () => {
+    const userToken = await GooglePress();
+    dispatch(socialLogin(userToken));
   };
   return (
     <ScrollView>
@@ -112,7 +116,7 @@ export default ({navigation: {navigate}}) => {
                 <Input
                   value={passwordConfirm}
                   placeholder="Password Confirm"
-                  password={true}
+                  isPassword={true}
                   stateFn={setPasswordConfirm}
                 />
               </InputContainer>
@@ -123,7 +127,7 @@ export default ({navigation: {navigate}}) => {
                 text={'Sign with google'}
                 name="google"
                 accent
-                onPress={GooglePress}
+                onPress={googleSubmit}
               />
               <Btn
                 text={'Sign with Kakao'}

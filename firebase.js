@@ -1,10 +1,11 @@
-// --- Firestore Database ---
-
-// --- Firestore Database ---
 import firebase from 'firebase/app';
-require('firebase/auth');
-require('firebase/firestore');
-require('firebase/storage');
+import 'firebase/auth';
+import 'firebase/firestore'; // 대체 왜... 업로드가 안되는거야
+import 'firebase/storage';
+
+// require('firebase/auth');
+// require('firebase/firestore');
+// require('firebase/storage');
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAknDiBmdh0MHd1WKQq4L3uYZFA700pfCE',
@@ -28,7 +29,7 @@ export const storageService = firebase.storage();
 // --- Firestore Database ---
 export const onSubmit = data => {
   dbService
-    .collection('nweets')
+    .collection('YEAH')
     .add({
       msg: data,
       createdAt: Date.now(),
@@ -39,6 +40,7 @@ export const onSubmit = data => {
   alert('함수 실행됨');
 };
 // --- Firestore Database ---
+
 export const signup = async ({email, password, phoneNumber, name, school}) => {
   const {user} = await authService.createUserWithEmailAndPassword(
     email,

@@ -2,6 +2,7 @@ import firebase from 'firebase/app';
 require('firebase/auth');
 require('firebase/firestore');
 require('firebase/storage');
+// require('firebase-admin');
 
 const firebaseConfig = {
   databaseURL: 'https://halfdelivery.firebaseio.com', // Firestore 사용하려면 필수!!!!
@@ -52,3 +53,7 @@ export const signin = async ({email, password}) => {
   const {user} = await authService.signInWithEmailAndPassword(email, password);
   return user;
 };
+
+// export const createFirebaseToken = async kakaoAccessToken => {
+//   const userId = `kakao:${kakaoAccessToken}`
+// };

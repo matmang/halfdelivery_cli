@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { FlatList } from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {FlatList} from 'react-native';
 import styled from 'styled-components/native';
-import { MaterialIcons } from '@expo/vector-icons';
-import { DB } from '../firebase';
+import {MaterialIcons} from '@expo/vector-icons';
+import {DB} from '../firebase';
 import moment from 'moment';
 
 const getDateOrTime = ts => {
@@ -15,7 +15,7 @@ const ItemContainer = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
   border-bottom-width: 1px;
-  border-color: ${({ theme }) => theme.itemBorder};
+  border-color: ${({theme}) => theme.itemBorder};
   padding: 15px 20px;
 `;
 const ItemTextContainer = styled.View`
@@ -25,26 +25,26 @@ const ItemTextContainer = styled.View`
 const ItemTitle = styled.Text`
   font-size: 20px;
   font-weight: 600;
-  color: ${({ theme }) => theme.text};
+  color: ${({theme}) => theme.text};
 `;
 const ItemDesc = styled.Text`
   font-size: 16px;
   margin-top: 5px;
-  color: ${({ theme }) => theme.itemDesc};
+  color: ${({theme}) => theme.itemDesc};
 `;
 const ItemTime = styled.Text`
   font-size: 12px;
-  color: ${({ theme }) => theme.itemTime};
+  color: ${({theme}) => theme.itemTime};
 `;
-const ItemIcon = styled(MaterialIcons).attrs(({ theme }) => ({
+const ItemIcon = styled(MaterialIcons).attrs(({theme}) => ({
   name: 'keyboard-arrow-right',
   size: 24,
   color: theme.itemIcon,
 }))``;
 const Item = React.memo(
-  ({ item: { id, title, description, createdAt }, onPress }) => {
+  ({item: {id, title, description, createdAt}, onPress}) => {
     return (
-      <ItemContainer onPress={() => onPress({ id, title })}>
+      <ItemContainer onPress={() => onPress({id, title})}>
         <ItemTextContainer>
           <ItemTitle>{title}</ItemTitle>
           <ItemDesc>{description}</ItemDesc>
@@ -53,15 +53,15 @@ const Item = React.memo(
         <ItemIcon />
       </ItemContainer>
     );
-  }
+  },
 );
 
 const Container = styled.View`
   flex: 1;
-  background-color: ${({ theme }) => theme.background};
+  background-color: ${({theme}) => theme.background};
 `;
 
-const ChannelList = ({ navigation }) => {
+const ChannelList = ({navigation}) => {
   const [channels, setChannels] = useState([]);
 
   useEffect(() => {
@@ -81,7 +81,7 @@ const ChannelList = ({ navigation }) => {
     <Container>
       <FlatList
         data={channels}
-        renderItem={({ item }) => (
+        renderItem={({item}) => (
           <Item
             item={item}
             onPress={params => navigation.navigate('Channel', params)}

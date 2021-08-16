@@ -846,9 +846,9 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@expo/config-plugins@^3.0.6":
+"@expo/config-plugins@^3.0.7":
   version "3.0.7"
-  resolved "https://registry.npmjs.org/@expo/config-plugins/-/config-plugins-3.0.7.tgz"
+  resolved "https://registry.yarnpkg.com/@expo/config-plugins/-/config-plugins-3.0.7.tgz#50870e26d34b11740a5841076c921729381d4319"
   integrity sha512-7YOoFtxB6XqDil+OlGXi7iredKHxXVFCAOIVfFyEDzO3oo0gBmWGmUnHgrPDvpMj0q+adCCh5BL8OcvGfc9ITQ==
   dependencies:
     "@expo/config-types" "^42.0.0"
@@ -1616,19 +1616,29 @@
   resolved "https://registry.npmjs.org/@react-native-community/google-signin/-/google-signin-5.0.0.tgz"
   integrity sha512-MvFHImmtlmE1kJZgZ9XaULm/OBuQ/AQWOCPr3NzYTUv2cCqyGwfFrealo5PS/fuL/InCGcfqK1k/1dZ+67Hjmg==
 
-"@react-native-firebase/app@^12.5.0":
-  version "12.5.0"
-  resolved "https://registry.npmjs.org/@react-native-firebase/app/-/app-12.5.0.tgz"
-  integrity sha512-QRbJaNZjS2Noj7Adcqom9ewrD78wNeC3yZTjsbDAeRUjb2wBk4J7mg6flPK+TW3bZaiCoj2NgqAbNqEmHLzIhw==
+"@react-native-firebase/app@^12.6.0":
+  version "12.6.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/app/-/app-12.6.0.tgz#84bbd186f8979ee83f4a9ebae51bf93b943c4888"
+  integrity sha512-2DJG4LEto1lpcDxWo1Gen93+iDpCVd1KCaGuegqNOHozI7FRUEKN/rjqjgd3z+NnJWIhZaEmoQRVqx9Av4zYRw==
   dependencies:
-    "@expo/config-plugins" "^3.0.6"
+    "@expo/config-plugins" "^3.0.7"
     opencollective-postinstall "^2.0.1"
     superstruct "^0.6.2"
 
-"@react-native-firebase/firestore@^12.5.0":
-  version "12.5.0"
-  resolved "https://registry.npmjs.org/@react-native-firebase/firestore/-/firestore-12.5.0.tgz"
-  integrity sha512-fW4qUZWO3cCs0wfzkPqfntfWY5X86UKq1Fq0F2Pw1raop6du6NlN0XSCtyO9BCU5xn/H5sDCpn+5lvKqTRlhAg==
+"@react-native-firebase/auth@^12.6.0":
+  version "12.6.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/auth/-/auth-12.6.0.tgz#3e743d04513366a141724cbdebb8db4e35a24df8"
+  integrity sha512-9NRB1ld+qe+TR33mqOGRyLZa4UE5sC8pLZ9pqCvCwpekCB6+SbUNnxeTxKvvvJzfrk9ZmLG+kHY4ONS/yECEVg==
+
+"@react-native-firebase/firestore@^12.6.0":
+  version "12.6.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/firestore/-/firestore-12.6.0.tgz#05ecf2badbd80d682dae62a276411b0ae1d3c52d"
+  integrity sha512-OK44tvut8Eq9Qfw5PcwFVfWbqgvKQWZ4ukttV7rzBAjaPrBrrgO9RcTxNlxPhxqrwKzDGTFhLuLzg3+GteDgYQ==
+
+"@react-native-firebase/storage@^12.6.0":
+  version "12.6.0"
+  resolved "https://registry.yarnpkg.com/@react-native-firebase/storage/-/storage-12.6.0.tgz#93f19ab8e808b5bc5e8bae7f417698cd6b927e14"
+  integrity sha512-Od8Lw1sBMXcitC5v05JYDiwKDc1UbJ5cTCeeJrjsaunv8kVZRHlKVIks0R1mAW/nEnjeHUBbNEraJKv7GOf1xw==
 
 "@react-native-seoul/kakao-login@^3.3.3":
   version "3.3.3"

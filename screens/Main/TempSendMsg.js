@@ -2,7 +2,8 @@ import React, {Component, useEffect, useState} from 'react';
 import {StyleSheet, View, Text, Button, Linking, TextInput} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import Styles from '../../assets/Styles2';
-import {dbService, sendData} from '../../firebase';
+// import {dbService, sendData} from '../../firebase';
+import {dbService, sendData} from '../../rn-firebase';
 
 const TempSendMsg = () => {
   const navigation = useNavigation();

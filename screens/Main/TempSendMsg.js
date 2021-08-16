@@ -30,7 +30,7 @@ const TempSendMsg = () => {
         title="전송"
         onPress={() => {
           sendData(text);
-          setTexts('');
+          setText('');
         }}
       />
     </View>

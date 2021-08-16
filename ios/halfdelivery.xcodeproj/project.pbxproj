@@ -147,6 +147,7 @@
 			sourceTree = "<group>";
 			tabWidth = 2;
 			usesTabs = 0;
+			wrapsLines = 0;
 		};
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
@@ -515,6 +516,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 833A38001B2C82CF950DEAC6 /* Pods-halfdelivery.debug.xcconfig */;
 			buildSettings = {
+				ARCHS = Universal;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -541,6 +543,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A3495C2D7808B36217FC05E7 /* Pods-halfdelivery.release.xcconfig */;
 			buildSettings = {
+				ARCHS = Universal;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
